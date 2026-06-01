@@ -36,7 +36,6 @@
       .scan { animation: scan 4.8s linear infinite; }
       .bar-a { animation: loadA 3.6s ease-in-out infinite; }
       .bar-b { animation: loadB 3.6s ease-in-out infinite; }
-      .bar-c { animation: loadC 3.6s ease-in-out infinite; }
       .pulse { animation: pulse 2.4s ease-in-out infinite; }
       .delay { animation-delay: 1.2s; }
       @keyframes show {
@@ -50,9 +49,8 @@
         50% { opacity: .2; }
         to { transform: translateY(560px); opacity: .04; }
       }
-      @keyframes loadA { 0%, 100% { width: 138px; } 50% { width: 196px; } }
-      @keyframes loadB { 0%, 100% { width: 170px; } 50% { width: 108px; } }
-      @keyframes loadC { 0%, 100% { width: 96px; } 50% { width: 158px; } }
+      @keyframes loadA { 0%, 100% { width: 82px; } 50% { width: 116px; } }
+      @keyframes loadB { 0%, 100% { width: 112px; } 50% { width: 72px; } }
       @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
     </style>
   </defs>

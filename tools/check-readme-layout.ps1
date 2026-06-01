@@ -51,6 +51,26 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -match "scaleX") {
         $failures.Add("dashboard.svg 进度条动画不应使用 scaleX，避免跨面板位移")
     }
+    $barTrackMatches = [regex]::Matches($dashboard, '<rect x="(?<x>\d+)" y="(?<y>\d+)" width="(?<track>\d+)" height="14" rx="7" fill="#21262D"/>\s*<rect class="(?<class>bar-[a-z])"')
+    $barTrackWidths = @{}
+    foreach ($match in $barTrackMatches) {
+        $barTrackWidths[$match.Groups["class"].Value] = [double]$match.Groups["track"].Value
+    }
+    foreach ($barName in $barTrackWidths.Keys) {
+        $keyframeName = "load" + $barName.Substring(4).ToUpperInvariant()
+        $keyframeMatch = [regex]::Match($dashboard, "@keyframes $keyframeName \{[^\n]*\}")
+        if (-not $keyframeMatch.Success) {
+            $failures.Add("未找到 $barName 对应动画: $keyframeName")
+            continue
+        }
+        $widths = [regex]::Matches($keyframeMatch.Value, 'width:\s*(\d+(?:\.\d+)?)px') |
+            ForEach-Object { [double]$_.Groups[1].Value }
+        foreach ($width in $widths) {
+            if ($width -gt $barTrackWidths[$barName]) {
+                $failures.Add("$barName 动画宽度 $width px 超过轨道宽度 $($barTrackWidths[$barName]) px")
+            }
+        }
+    }
     if ($dashboard -notmatch '<g[^>]+id="snake-vertical"') {
         $failures.Add("贡献蛇应改为右侧纵向模块，并标记为 snake-vertical")
     }
