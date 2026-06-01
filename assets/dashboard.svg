@@ -81,63 +81,75 @@
 
   <text x="44" y="62" class="mono" font-size="15" fill="#39C5CF">SYSTEM // ONLINE</text>
   <text x="44" y="112" class="sans" font-size="52" font-weight="800" fill="#F8FAFC">FySystem</text>
-  <text x="48" y="148" class="mono" font-size="18" fill="#C9D1D9">游戏工具 // AI 自动化 // Windows 底层实验</text>
+  <text x="48" y="148" class="mono" font-size="18" fill="#C9D1D9">游戏工具 // 游戏外挂 // AI 自动化 // Windows 驱动开发</text>
 
-  <rect x="44" y="184" width="508" height="172" rx="16" class="panel"/>
-  <rect x="44" y="184" width="508" height="36" rx="16" fill="#0D1117"/>
+  <rect x="44" y="184" width="494" height="172" rx="16" class="panel"/>
+  <rect x="44" y="184" width="494" height="36" rx="16" fill="#0D1117"/>
   <circle cx="68" cy="202" r="6" fill="#FF5F56"/>
   <circle cx="88" cy="202" r="6" fill="#FFBD2E"/>
   <circle cx="108" cy="202" r="6" fill="#27C93F"/>
-  <text x="298" y="208" text-anchor="middle" class="mono" font-size="13" fill="#8B949E">workspace.boot</text>
+  <text x="291" y="208" text-anchor="middle" class="mono" font-size="13" fill="#8B949E">workspace.boot</text>
 
   <g class="mono" font-size="17">
     <text class="line l1" x="72" y="258" fill="#C9D1D9"><tspan fill="#3FB950">$</tspan> 启动工程工作台</text>
-    <text class="line l2" x="72" y="292" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Oasis 工具链 / 玩法脚本</text>
-    <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> MCP Agent / 自动化流水线</text>
+    <text class="line l2" x="72" y="292" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> 游戏工具 / 游戏外挂实验</text>
+    <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Windows 驱动开发 / 自动化流水线</text>
   </g>
   <rect class="cursor" x="452" y="310" width="10" height="20" fill="#3FB950"/>
 
-  <rect x="582" y="184" width="274" height="172" rx="16" class="panel"/>
-  <text x="610" y="226" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">运行状态</text>
-  <text x="610" y="262" class="mono" font-size="15" fill="#C9D1D9">游戏工具链</text>
-  <rect x="610" y="276" width="208" height="14" rx="7" fill="#21262D"/>
-  <rect class="bar-a" x="610" y="276" width="208" height="14" rx="7" fill="#39C5CF"/>
-  <text x="610" y="314" class="mono" font-size="15" fill="#C9D1D9">AI 自动化</text>
-  <rect x="610" y="328" width="208" height="14" rx="7" fill="#21262D"/>
-  <rect class="bar-b" x="610" y="328" width="208" height="14" rx="7" fill="#58A6FF"/>
+  <rect x="562" y="184" width="174" height="172" rx="16" class="panel"/>
+  <text x="586" y="226" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">运行状态</text>
+  <text x="586" y="262" class="mono" font-size="14" fill="#C9D1D9">游戏工具</text>
+  <rect x="586" y="276" width="124" height="14" rx="7" fill="#21262D"/>
+  <rect class="bar-a" x="586" y="276" width="124" height="14" rx="7" fill="#39C5CF"/>
+  <text x="586" y="314" class="mono" font-size="14" fill="#C9D1D9">驱动开发</text>
+  <rect x="586" y="328" width="124" height="14" rx="7" fill="#21262D"/>
+  <rect class="bar-b" x="586" y="328" width="124" height="14" rx="7" fill="#58A6FF"/>
 
-  <rect x="44" y="386" width="390" height="92" rx="16" class="panel"/>
+  <rect x="44" y="386" width="328" height="92" rx="16" class="panel"/>
   <circle class="pulse" cx="76" cy="422" r="8" fill="#39C5CF"/>
-  <text x="96" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">oasis-skill-plus</text>
-  <text x="76" y="458" class="sans" font-size="15" fill="#C9D1D9">Oasis 玩法能力扩展 / 工具前端</text>
+  <text x="96" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">Game Tooling</text>
+  <text x="76" y="458" class="sans" font-size="15" fill="#C9D1D9">玩法脚本 / 编辑器工具 / 游戏外挂</text>
 
-  <rect x="466" y="386" width="390" height="92" rx="16" class="panel"/>
-  <circle class="pulse delay" cx="498" cy="422" r="8" fill="#58A6FF"/>
-  <text x="518" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">oasis-origins-mcp</text>
-  <text x="498" y="458" class="sans" font-size="15" fill="#C9D1D9">MCP Agent / 自动化流水线</text>
+  <rect x="398" y="386" width="338" height="92" rx="16" class="panel"/>
+  <circle class="pulse delay" cx="430" cy="422" r="8" fill="#58A6FF"/>
+  <text x="450" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">Driver Lab</text>
+  <text x="430" y="458" class="sans" font-size="15" fill="#C9D1D9">Windows 驱动开发 / 底层调试</text>
 
-  <rect x="44" y="508" width="390" height="142" rx="16" class="panel"/>
+  <rect x="44" y="508" width="692" height="142" rx="16" class="panel"/>
   <text x="72" y="548" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">提交轨迹</text>
   <text x="72" y="576" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
-  <polyline points="76,630 108,618 140,626 172,602 204,614 236,594 268,616 300,600 332,624 364,596 404,612" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="76,630 132,618 188,626 244,602 300,614 356,594 412,616 468,600 524,624 580,596 688,612" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#58A6FF">
-    <circle cx="108" cy="618" r="4"/>
-    <circle cx="172" cy="602" r="4"/>
-    <circle cx="236" cy="594" r="4"/>
-    <circle cx="364" cy="596" r="4"/>
+    <circle cx="132" cy="618" r="4"/>
+    <circle cx="244" cy="602" r="4"/>
+    <circle cx="356" cy="594" r="4"/>
+    <circle cx="580" cy="596" r="4"/>
   </g>
 
-  <rect x="466" y="508" width="390" height="142" rx="16" class="panel"/>
-  <text x="494" y="548" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">贡献蛇</text>
-  <text x="494" y="576" class="mono" font-size="14" fill="#8B949E">contribution grid runner</text>
-  <g transform="translate(494 596)">
+  <rect x="760" y="184" width="96" height="466" rx="16" class="panel"/>
+  <text x="808" y="226" text-anchor="middle" class="sans" font-size="21" font-weight="700" fill="#F8FAFC">贡献蛇</text>
+  <text x="808" y="252" text-anchor="middle" class="mono" font-size="12" fill="#8B949E">snake run</text>
+  <g id="snake-vertical" transform="translate(786 276)">
     <g fill="#21262D" stroke="#30363D" stroke-width="1">
-      <rect x="0" y="0" width="12" height="12" rx="3"/><rect x="18" y="0" width="12" height="12" rx="3"/><rect x="36" y="0" width="12" height="12" rx="3"/><rect x="54" y="0" width="12" height="12" rx="3"/><rect x="72" y="0" width="12" height="12" rx="3"/><rect x="90" y="0" width="12" height="12" rx="3"/><rect x="108" y="0" width="12" height="12" rx="3"/><rect x="126" y="0" width="12" height="12" rx="3"/><rect x="144" y="0" width="12" height="12" rx="3"/><rect x="162" y="0" width="12" height="12" rx="3"/><rect x="180" y="0" width="12" height="12" rx="3"/><rect x="198" y="0" width="12" height="12" rx="3"/><rect x="216" y="0" width="12" height="12" rx="3"/><rect x="234" y="0" width="12" height="12" rx="3"/>
-      <rect x="0" y="18" width="12" height="12" rx="3"/><rect x="18" y="18" width="12" height="12" rx="3"/><rect x="36" y="18" width="12" height="12" rx="3"/><rect x="54" y="18" width="12" height="12" rx="3"/><rect x="72" y="18" width="12" height="12" rx="3"/><rect x="90" y="18" width="12" height="12" rx="3"/><rect x="108" y="18" width="12" height="12" rx="3"/><rect x="126" y="18" width="12" height="12" rx="3"/><rect x="144" y="18" width="12" height="12" rx="3"/><rect x="162" y="18" width="12" height="12" rx="3"/><rect x="180" y="18" width="12" height="12" rx="3"/><rect x="198" y="18" width="12" height="12" rx="3"/><rect x="216" y="18" width="12" height="12" rx="3"/><rect x="234" y="18" width="12" height="12" rx="3"/>
-      <rect x="0" y="36" width="12" height="12" rx="3"/><rect x="18" y="36" width="12" height="12" rx="3"/><rect x="36" y="36" width="12" height="12" rx="3"/><rect x="54" y="36" width="12" height="12" rx="3"/><rect x="72" y="36" width="12" height="12" rx="3"/><rect x="90" y="36" width="12" height="12" rx="3"/><rect x="108" y="36" width="12" height="12" rx="3"/><rect x="126" y="36" width="12" height="12" rx="3"/><rect x="144" y="36" width="12" height="12" rx="3"/><rect x="162" y="36" width="12" height="12" rx="3"/><rect x="180" y="36" width="12" height="12" rx="3"/><rect x="198" y="36" width="12" height="12" rx="3"/><rect x="216" y="36" width="12" height="12" rx="3"/><rect x="234" y="36" width="12" height="12" rx="3"/>
+      <rect x="0" y="0" width="12" height="12" rx="3"/><rect x="18" y="0" width="12" height="12" rx="3"/><rect x="36" y="0" width="12" height="12" rx="3"/>
+      <rect x="0" y="18" width="12" height="12" rx="3"/><rect x="18" y="18" width="12" height="12" rx="3"/><rect x="36" y="18" width="12" height="12" rx="3"/>
+      <rect x="0" y="36" width="12" height="12" rx="3"/><rect x="18" y="36" width="12" height="12" rx="3"/><rect x="36" y="36" width="12" height="12" rx="3"/>
+      <rect x="0" y="54" width="12" height="12" rx="3"/><rect x="18" y="54" width="12" height="12" rx="3"/><rect x="36" y="54" width="12" height="12" rx="3"/>
+      <rect x="0" y="72" width="12" height="12" rx="3"/><rect x="18" y="72" width="12" height="12" rx="3"/><rect x="36" y="72" width="12" height="12" rx="3"/>
+      <rect x="0" y="90" width="12" height="12" rx="3"/><rect x="18" y="90" width="12" height="12" rx="3"/><rect x="36" y="90" width="12" height="12" rx="3"/>
+      <rect x="0" y="108" width="12" height="12" rx="3"/><rect x="18" y="108" width="12" height="12" rx="3"/><rect x="36" y="108" width="12" height="12" rx="3"/>
+      <rect x="0" y="126" width="12" height="12" rx="3"/><rect x="18" y="126" width="12" height="12" rx="3"/><rect x="36" y="126" width="12" height="12" rx="3"/>
+      <rect x="0" y="144" width="12" height="12" rx="3"/><rect x="18" y="144" width="12" height="12" rx="3"/><rect x="36" y="144" width="12" height="12" rx="3"/>
+      <rect x="0" y="162" width="12" height="12" rx="3"/><rect x="18" y="162" width="12" height="12" rx="3"/><rect x="36" y="162" width="12" height="12" rx="3"/>
+      <rect x="0" y="180" width="12" height="12" rx="3"/><rect x="18" y="180" width="12" height="12" rx="3"/><rect x="36" y="180" width="12" height="12" rx="3"/>
+      <rect x="0" y="198" width="12" height="12" rx="3"/><rect x="18" y="198" width="12" height="12" rx="3"/><rect x="36" y="198" width="12" height="12" rx="3"/>
     </g>
-    <polyline points="6,42 24,42 42,24 60,24 78,6 96,6 114,24 132,24 150,42 168,42 186,24 204,24 222,6 240,6" fill="none" stroke="#3FB950" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".88"/>
-    <circle class="pulse" cx="240" cy="6" r="7" fill="#9BE9A8"/>
+    <path d="M6 6H24V24H42V42H24V60H6V78H24V96H42V114H24V132H6V150H24V168H42V186H24V204H42" fill="none" stroke="#3FB950" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+      <animate attributeName="stroke-dasharray" values="20 360;130 250;20 360" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" values="0;-180;-360" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <circle class="pulse" cx="42" cy="204" r="7" fill="#9BE9A8"/>
   </g>
 
   <rect x="44" y="676" width="812" height="44" rx="14" fill="#0D1117" stroke="#30363D"/>

@@ -38,8 +38,24 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch "贡献蛇") {
         $failures.Add("dashboard.svg 应保留贡献蛇模块")
     }
+    foreach ($forbidden in @("oasis-skill-plus", "oasis-origins-mcp", "Oasis 玩法能力扩展", "Windows 底层实验")) {
+        if ($dashboard.Contains($forbidden)) {
+            $failures.Add("dashboard.svg 不应显示过时或具体项目文案: $forbidden")
+        }
+    }
+    foreach ($required in @("Windows 驱动开发", "游戏外挂")) {
+        if (-not $dashboard.Contains($required)) {
+            $failures.Add("dashboard.svg 应显示新方向文案: $required")
+        }
+    }
     if ($dashboard -match "scaleX") {
         $failures.Add("dashboard.svg 进度条动画不应使用 scaleX，避免跨面板位移")
+    }
+    if ($dashboard -notmatch '<g[^>]+id="snake-vertical"') {
+        $failures.Add("贡献蛇应改为右侧纵向模块，并标记为 snake-vertical")
+    }
+    if ($dashboard -notmatch '<rect x="760" y="184" width="96" height="466"') {
+        $failures.Add("贡献蛇应位于右侧纵向栏，而不是底部横向模块")
     }
     $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
     if ($trackMatch.Success) {
