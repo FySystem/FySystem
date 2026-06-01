@@ -1,6 +1,6 @@
 <div align="center">
 
-![FySystem](./assets/terminal.svg)
+![FySystem Dashboard](./assets/dashboard.svg)
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2600&pause=900&color=39C5CF&center=true&vCenter=true&width=760&lines=%E6%B8%B8%E6%88%8F%E5%B7%A5%E5%85%B7+%2F%2F+AI+%E8%87%AA%E5%8A%A8%E5%8C%96+%2F%2F+Windows+%E5%BA%95%E5%B1%82%E5%AE%9E%E9%AA%8C;%E6%8A%8A%E5%A5%BD%E7%8E%A9%E7%9A%84%E6%83%B3%E6%B3%95%E5%81%9A%E6%88%90%E5%8F%AF%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7;%E6%AD%A3%E5%9C%A8%E6%8A%8A+Oasis+%2F+MCP+%2F+Windows+%E4%B8%B2%E8%B5%B7%E6%9D%A5" alt="Typing SVG" />
 
@@ -10,16 +10,6 @@
 <img src="https://img.shields.io/badge/JavaScript-%E5%B7%A5%E5%85%B7%E5%89%8D%E7%AB%AF-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111" alt="JavaScript" />
 <img src="https://img.shields.io/badge/Go-MCP%E5%B7%A5%E5%85%B7-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />
 <img src="https://img.shields.io/badge/C%2B%2B-%E5%BA%95%E5%B1%82%E5%AE%9E%E9%AA%8C-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
-
-<br />
-<br />
-
-![项目面板](./assets/projects.svg)
-
-<br />
-<br />
-
-![状态面板](./assets/status.svg)
 
 <br />
 <br />

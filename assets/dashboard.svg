@@ -1,0 +1,117 @@
+<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">FySystem Dashboard</title>
+  <desc id="desc">中文赛博仪表盘风格的 GitHub 主页主视觉</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="0.56" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="glowCyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(184 84) rotate(34) scale(380 210)">
+      <stop stop-color="#39C5CF" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#39C5CF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(742 136) rotate(140) scale(320 210)">
+      <stop stop-color="#DB61A2" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#DB61A2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lineGlow" x1="36" y1="0" x2="864" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39C5CF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#39C5CF"/>
+      <stop offset="1" stop-color="#39C5CF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <style>
+      .sans { font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; }
+      .mono { font-family: Consolas, Monaco, 'Courier New', monospace; }
+      .muted { fill: #8B949E; }
+      .panel { fill: #111827; stroke: #30363D; }
+      .line { opacity: 0; animation: show 8s infinite; }
+      .l1 { animation-delay: .3s; }
+      .l2 { animation-delay: 1.4s; }
+      .l3 { animation-delay: 2.5s; }
+      .cursor { animation: blink 1s steps(2, start) infinite; }
+      .scan { animation: scan 4.8s linear infinite; }
+      .bar-a { animation: loadA 3.6s ease-in-out infinite; transform-origin: 0 0; }
+      .bar-b { animation: loadB 3.6s ease-in-out infinite; transform-origin: 0 0; }
+      .bar-c { animation: loadC 3.6s ease-in-out infinite; transform-origin: 0 0; }
+      .pulse { animation: pulse 2.4s ease-in-out infinite; }
+      .delay { animation-delay: 1.2s; }
+      @keyframes show {
+        0%, 8% { opacity: 0; transform: translateY(6px); }
+        16%, 88% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-4px); }
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes scan {
+        from { transform: translateY(-70px); opacity: .06; }
+        50% { opacity: .2; }
+        to { transform: translateY(560px); opacity: .04; }
+      }
+      @keyframes loadA { 0%, 100% { transform: scaleX(.66); } 50% { transform: scaleX(.94); } }
+      @keyframes loadB { 0%, 100% { transform: scaleX(.82); } 50% { transform: scaleX(.52); } }
+      @keyframes loadC { 0%, 100% { transform: scaleX(.46); } 50% { transform: scaleX(.76); } }
+      @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <rect width="900" height="520" rx="24" fill="url(#bg)"/>
+  <rect width="900" height="520" rx="24" fill="url(#glowCyan)"/>
+  <rect width="900" height="520" rx="24" fill="url(#glowPink)"/>
+
+  <g opacity=".26">
+    <path d="M36 86H864" stroke="#30363D"/>
+    <path d="M36 166H864" stroke="#30363D"/>
+    <path d="M36 246H864" stroke="#30363D"/>
+    <path d="M36 326H864" stroke="#30363D"/>
+    <path d="M36 406H864" stroke="#30363D"/>
+    <path d="M152 36V484" stroke="#30363D"/>
+    <path d="M300 36V484" stroke="#30363D"/>
+    <path d="M448 36V484" stroke="#30363D"/>
+    <path d="M596 36V484" stroke="#30363D"/>
+    <path d="M744 36V484" stroke="#30363D"/>
+  </g>
+
+  <rect class="scan" x="36" y="0" width="828" height="38" fill="#39C5CF" filter="url(#blur)"/>
+
+  <text x="44" y="62" class="mono" font-size="15" fill="#39C5CF">SYSTEM // ONLINE</text>
+  <text x="44" y="112" class="sans" font-size="52" font-weight="800" fill="#F8FAFC">FySystem</text>
+  <text x="48" y="148" class="mono" font-size="18" fill="#C9D1D9">游戏工具 // AI 自动化 // Windows 底层实验</text>
+
+  <rect x="44" y="184" width="508" height="172" rx="16" class="panel"/>
+  <rect x="44" y="184" width="508" height="36" rx="16" fill="#0D1117"/>
+  <circle cx="68" cy="202" r="6" fill="#FF5F56"/>
+  <circle cx="88" cy="202" r="6" fill="#FFBD2E"/>
+  <circle cx="108" cy="202" r="6" fill="#27C93F"/>
+  <text x="298" y="208" text-anchor="middle" class="mono" font-size="13" fill="#8B949E">workspace.boot</text>
+
+  <g class="mono" font-size="17">
+    <text class="line l1" x="72" y="258" fill="#C9D1D9"><tspan fill="#3FB950">$</tspan> 启动工程工作台</text>
+    <text class="line l2" x="72" y="292" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Oasis 工具链 / 玩法脚本</text>
+    <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> MCP Agent / 自动化流水线</text>
+  </g>
+  <rect class="cursor" x="452" y="310" width="10" height="20" fill="#3FB950"/>
+
+  <rect x="582" y="184" width="274" height="172" rx="16" class="panel"/>
+  <text x="610" y="226" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">运行状态</text>
+  <text x="610" y="262" class="mono" font-size="15" fill="#C9D1D9">游戏工具链</text>
+  <rect x="610" y="276" width="208" height="14" rx="7" fill="#21262D"/>
+  <rect class="bar-a" x="610" y="276" width="208" height="14" rx="7" fill="#39C5CF"/>
+  <text x="610" y="314" class="mono" font-size="15" fill="#C9D1D9">AI 自动化</text>
+  <rect x="610" y="328" width="208" height="14" rx="7" fill="#21262D"/>
+  <rect class="bar-b" x="610" y="328" width="208" height="14" rx="7" fill="#58A6FF"/>
+
+  <rect x="44" y="386" width="390" height="92" rx="16" class="panel"/>
+  <circle class="pulse" cx="76" cy="422" r="8" fill="#39C5CF"/>
+  <text x="96" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">oasis-skill-plus</text>
+  <text x="76" y="458" class="sans" font-size="15" fill="#C9D1D9">Oasis 玩法能力扩展 / 工具前端</text>
+
+  <rect x="466" y="386" width="390" height="92" rx="16" class="panel"/>
+  <circle class="pulse delay" cx="498" cy="422" r="8" fill="#58A6FF"/>
+  <text x="518" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">oasis-origins-mcp</text>
+  <text x="498" y="458" class="sans" font-size="15" fill="#C9D1D9">MCP Agent / 自动化流水线</text>
+
+  <rect x="36" y="502" width="828" height="2" rx="1" fill="url(#lineGlow)"/>
+</svg>
