@@ -83,6 +83,52 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch 'id="snake-inline"') {
         $failures.Add("贡献蛇应内联到 dashboard.svg，并标记为 snake-inline")
     }
+    foreach ($snakeMarker in @("Generated with https://github.com/Platane/snk", 'class="c ', 'class="u ', 'class="s ')) {
+        if (-not $dashboard.Contains($snakeMarker)) {
+            $failures.Add("贡献蛇应使用真实 Platane/snk 产物内联，而不是手写模拟数据，缺少标记: $snakeMarker")
+        }
+    }
+    $snakeFrameMatch = [regex]::Match($dashboard, '<svg x="(?<x>-?\d+(?:\.\d+)?)" y="(?<y>-?\d+(?:\.\d+)?)" width="(?<width>\d+(?:\.\d+)?)" height="(?<height>\d+(?:\.\d+)?)" viewBox="[^"]+" preserveAspectRatio="xMidYMid meet" transform="rotate\(90 (?<cx>-?\d+(?:\.\d+)?) (?<cy>-?\d+(?:\.\d+)?)\)">')
+    if ($snakeFrameMatch.Success) {
+        $containerX = 786.0
+        $containerY = 276.0
+        $panelX = 760.0
+        $panelY = 184.0
+        $panelWidth = 96.0
+        $panelHeight = 466.0
+        $contentTop = 276.0
+        $contentBottom = 628.0
+        $x = [double]$snakeFrameMatch.Groups["x"].Value
+        $y = [double]$snakeFrameMatch.Groups["y"].Value
+        $width = [double]$snakeFrameMatch.Groups["width"].Value
+        $height = [double]$snakeFrameMatch.Groups["height"].Value
+        $cx = [double]$snakeFrameMatch.Groups["cx"].Value
+        $cy = [double]$snakeFrameMatch.Groups["cy"].Value
+        $corners = @(
+            [pscustomobject]@{ X = $x; Y = $y },
+            [pscustomobject]@{ X = $x + $width; Y = $y },
+            [pscustomobject]@{ X = $x; Y = $y + $height },
+            [pscustomobject]@{ X = $x + $width; Y = $y + $height }
+        )
+        $rotated = foreach ($corner in $corners) {
+            $px = [double]$corner.X
+            $py = [double]$corner.Y
+            [pscustomobject]@{
+                X = $containerX + $cx - ($py - $cy)
+                Y = $containerY + $cy + ($px - $cx)
+            }
+        }
+        $minX = ($rotated | Measure-Object -Property X -Minimum).Minimum
+        $maxX = ($rotated | Measure-Object -Property X -Maximum).Maximum
+        $minY = ($rotated | Measure-Object -Property Y -Minimum).Minimum
+        $maxY = ($rotated | Measure-Object -Property Y -Maximum).Maximum
+        if ($minX -lt $panelX -or $maxX -gt ($panelX + $panelWidth) -or $minY -lt $contentTop -or $maxY -gt $contentBottom) {
+            $failures.Add("真实贡献蛇旋转后越出右侧内容区: x=$([math]::Round($minX, 1))..$([math]::Round($maxX, 1)), y=$([math]::Round($minY, 1))..$([math]::Round($maxY, 1))")
+        }
+    }
+    else {
+        $failures.Add("未找到真实贡献蛇内联 SVG 的定位参数")
+    }
     if ($dashboard -notmatch '<rect x="44" y="386" width="692" height="264"') {
         $failures.Add("提交轨迹应上移到项目卡片空位并增加高度")
     }

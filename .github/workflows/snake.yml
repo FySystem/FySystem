@@ -17,6 +17,9 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
       - name: Generate snake SVG
         uses: Platane/snk/svg-only@v3
         with:
@@ -24,6 +27,21 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Inline real snake into dashboard
+        run: python tools/inline-contribution-snake.py --snake dist/github-contribution-grid-snake-dark.svg
+
+      - name: Verify README layout
+        shell: pwsh
+        run: |
+          pwsh -NoProfile -File tools/check-readme-layout.ps1
+          pwsh -NoProfile -File tools/check-readme-images.ps1
+
+      - name: Update dashboard on main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: 更新真实贡献蛇"
+          file_pattern: assets/dashboard.svg
 
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
