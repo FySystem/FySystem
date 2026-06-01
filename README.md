@@ -1,5 +1,5 @@
 <div align="center">
 
-![FySystem Dashboard](./assets/dashboard.svg?v=2026060202)
+![FySystem Dashboard](./assets/dashboard.svg?v=2026060204)
 
 </div>

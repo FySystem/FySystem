@@ -130,12 +130,12 @@
     <path d="M118 568H698" stroke="#30363D" stroke-dasharray="5 10"/>
     <path d="M118 608H698" stroke="#30363D" stroke-dasharray="5 10"/>
   </g>
-  <polyline points="78,606 132,572 186,584 240,514 294,546 348,492 402,562 456,526 510,588 564,476 618,536 688,502" fill="none" stroke="#39C5CF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="132,601 180,572 228,584 276,514 324,546 372,494 420,562 468,526 516,588 564,496 620,536 684,502" fill="none" stroke="#39C5CF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#58A6FF">
-    <circle cx="132" cy="572" r="5"/>
-    <circle cx="240" cy="514" r="5"/>
-    <circle cx="348" cy="492" r="5"/>
-    <circle cx="564" cy="476" r="5"/>
+    <circle cx="180" cy="572" r="5"/>
+    <circle cx="276" cy="514" r="5"/>
+    <circle cx="372" cy="494" r="5"/>
+    <circle cx="564" cy="496" r="5"/>
   </g>
 
   <rect x="760" y="184" width="96" height="466" rx="16" class="panel"/>

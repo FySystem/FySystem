@@ -1,5 +1,5 @@
 param(
-    [string]$ReadmePath = "README.md"
+    [string]$ReadmePath = (Join-Path (Split-Path -Parent $PSScriptRoot) "README.md")
 )
 
 $ErrorActionPreference = "Stop"
@@ -144,18 +144,49 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -match '<rect class="cursor" x="452" y="310"') {
         $failures.Add("workspace.boot 光标不应固定在第三行位置，应跟随当前显示文字行")
     }
-    foreach ($cursorClass in @("cursor-l1", "cursor-l2", "cursor-l3")) {
-        if (-not $dashboard.Contains($cursorClass)) {
+    $cursorBounds = @{
+        "cursor-l1" = @{ MinX = 220.0; MaxX = 260.0; Y = 242.0 }
+        "cursor-l2" = @{ MinX = 310.0; MaxX = 350.0; Y = 276.0 }
+        "cursor-l3" = @{ MinX = 440.0; MaxX = 480.0; Y = 310.0 }
+    }
+    foreach ($cursorClass in $cursorBounds.Keys) {
+        $cursorMatch = [regex]::Match($dashboard, '<rect class="[^"]*\b' + [regex]::Escape($cursorClass) + '\b[^"]*" x="(?<x>\d+(?:\.\d+)?)" y="(?<y>\d+(?:\.\d+)?)"')
+        if (-not $cursorMatch.Success) {
             $failures.Add("workspace.boot 光标应按行同步显示，缺少: $cursorClass")
+            continue
+        }
+        $cursorX = [double]$cursorMatch.Groups["x"].Value
+        $cursorY = [double]$cursorMatch.Groups["y"].Value
+        $expected = $cursorBounds[$cursorClass]
+        if ($cursorX -lt $expected.MinX -or $cursorX -gt $expected.MaxX -or [math]::Abs($cursorY - $expected.Y) -gt 1) {
+            $failures.Add("$cursorClass 位置偏离文字尾部: x=$cursorX, y=$cursorY")
         }
     }
     $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
     if ($trackMatch.Success) {
         $pointNumbers = [regex]::Matches($trackMatch.Groups[1].Value, '-?\d+(?:\.\d+)?') |
             ForEach-Object { [double]$_.Value }
-        for ($i = 1; $i -lt $pointNumbers.Count; $i += 2) {
-            if ($pointNumbers[$i] -lt 470) {
-                $failures.Add("提交轨迹折线进入标题区域，y=$($pointNumbers[$i])；折线 y 坐标应 >= 470")
+        $plotLeft = 128.0
+        $plotRight = 688.0
+        $plotTop = 488.0
+        $plotBottom = 606.0
+        $lineStrokeRadius = 2.5
+        for ($i = 0; $i -lt $pointNumbers.Count; $i += 2) {
+            $pointX = $pointNumbers[$i]
+            $pointY = $pointNumbers[$i + 1]
+            if (($pointX - $lineStrokeRadius) -lt $plotLeft -or ($pointX + $lineStrokeRadius) -gt $plotRight -or ($pointY - $lineStrokeRadius) -lt $plotTop -or ($pointY + $lineStrokeRadius) -gt $plotBottom) {
+                $failures.Add("提交轨迹折线可见外沿越出坐标轴内容区: x=$pointX, y=$pointY, strokeRadius=$lineStrokeRadius；应位于 x=$plotLeft..$plotRight, y=$plotTop..$plotBottom")
+                break
+            }
+        }
+        $trackSection = $dashboard.Substring($trackMatch.Index, [math]::Min(1800, $dashboard.Length - $trackMatch.Index))
+        $highlightCircles = [regex]::Matches($trackSection, '<circle cx="(?<cx>\d+(?:\.\d+)?)" cy="(?<cy>\d+(?:\.\d+)?)" r="(?<r>\d+(?:\.\d+)?)"')
+        foreach ($circle in $highlightCircles) {
+            $circleX = [double]$circle.Groups["cx"].Value
+            $circleY = [double]$circle.Groups["cy"].Value
+            $circleRadius = [double]$circle.Groups["r"].Value
+            if (($circleX - $circleRadius) -lt $plotLeft -or ($circleX + $circleRadius) -gt $plotRight -or ($circleY - $circleRadius) -lt $plotTop -or ($circleY + $circleRadius) -gt $plotBottom) {
+                $failures.Add("提交轨迹高亮圆点可见外沿越出坐标轴内容区: cx=$circleX, cy=$circleY, r=$circleRadius；应位于 x=$plotLeft..$plotRight, y=$plotTop..$plotBottom")
                 break
             }
         }

@@ -1,5 +1,5 @@
 param(
-    [string]$ReadmePath = "README.md"
+    [string]$ReadmePath = (Join-Path (Split-Path -Parent $PSScriptRoot) "README.md")
 )
 
 $ErrorActionPreference = "Stop"
