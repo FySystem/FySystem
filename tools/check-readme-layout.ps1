@@ -41,6 +41,20 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -match "scaleX") {
         $failures.Add("dashboard.svg 进度条动画不应使用 scaleX，避免跨面板位移")
     }
+    $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
+    if ($trackMatch.Success) {
+        $pointNumbers = [regex]::Matches($trackMatch.Groups[1].Value, '-?\d+(?:\.\d+)?') |
+            ForEach-Object { [double]$_.Value }
+        for ($i = 1; $i -lt $pointNumbers.Count; $i += 2) {
+            if ($pointNumbers[$i] -lt 590) {
+                $failures.Add("提交轨迹折线进入标题区域，y=$($pointNumbers[$i])；折线 y 坐标应 >= 590")
+                break
+            }
+        }
+    }
+    else {
+        $failures.Add("未找到提交轨迹折线模块")
+    }
 }
 
 if ($readme -match '\./assets/projects\.svg') {

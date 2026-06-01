@@ -119,12 +119,12 @@
   <rect x="44" y="508" width="390" height="142" rx="16" class="panel"/>
   <text x="72" y="548" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">提交轨迹</text>
   <text x="72" y="576" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
-  <polyline points="76,618 108,604 140,614 172,584 204,596 236,562 268,588 300,568 332,598 364,556 404,576" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="76,630 108,618 140,626 172,602 204,614 236,594 268,616 300,600 332,624 364,596 404,612" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#58A6FF">
-    <circle cx="108" cy="604" r="4"/>
-    <circle cx="172" cy="584" r="4"/>
-    <circle cx="236" cy="562" r="4"/>
-    <circle cx="364" cy="556" r="4"/>
+    <circle cx="108" cy="618" r="4"/>
+    <circle cx="172" cy="602" r="4"/>
+    <circle cx="236" cy="594" r="4"/>
+    <circle cx="364" cy="596" r="4"/>
   </g>
 
   <rect x="466" y="508" width="390" height="142" rx="16" class="panel"/>
