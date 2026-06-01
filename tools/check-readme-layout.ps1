@@ -28,6 +28,21 @@ if ($readme -notmatch '\./assets/dashboard\.svg') {
     $failures.Add("README 应使用整合布局图: ./assets/dashboard.svg")
 }
 
+$readmeDir = Split-Path -Parent $ReadmePath
+if ([string]::IsNullOrWhiteSpace($readmeDir)) {
+    $readmeDir = "."
+}
+$dashboardPath = Join-Path $readmeDir "assets/dashboard.svg"
+if (Test-Path -LiteralPath $dashboardPath) {
+    $dashboard = Get-Content -Raw -LiteralPath $dashboardPath
+    if ($dashboard -notmatch "贡献蛇") {
+        $failures.Add("dashboard.svg 应保留贡献蛇模块")
+    }
+    if ($dashboard -match "scaleX") {
+        $failures.Add("dashboard.svg 进度条动画不应使用 scaleX，避免跨面板位移")
+    }
+}
+
 if ($readme -match '\./assets/projects\.svg') {
     $failures.Add("README 不应继续使用分散项目面板: ./assets/projects.svg")
 }
