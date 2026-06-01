@@ -119,7 +119,33 @@
   <text x="808" y="226" text-anchor="middle" class="sans" font-size="21" font-weight="700" fill="#F8FAFC">贡献蛇</text>
   <text x="808" y="252" text-anchor="middle" class="mono" font-size="12" fill="#8B949E">snake run</text>
   <g id="snake-vertical" transform="translate(786 276)">
-    <image href="https://raw.githubusercontent.com/FySystem/FySystem/output/github-contribution-grid-snake-dark.svg" x="-184" y="-16" width="430" height="94" transform="rotate(90 31 31)" preserveAspectRatio="xMidYMid meet"/>
+    <g id="snake-inline">
+      <g fill="#21262D" stroke="#30363D" stroke-width="1">
+        <rect x="0" y="0" width="12" height="12" rx="3"/><rect x="18" y="0" width="12" height="12" rx="3"/><rect x="36" y="0" width="12" height="12" rx="3"/>
+        <rect x="0" y="18" width="12" height="12" rx="3"/><rect x="18" y="18" width="12" height="12" rx="3"/><rect x="36" y="18" width="12" height="12" rx="3"/>
+        <rect x="0" y="36" width="12" height="12" rx="3"/><rect x="18" y="36" width="12" height="12" rx="3"/><rect x="36" y="36" width="12" height="12" rx="3"/>
+        <rect x="0" y="54" width="12" height="12" rx="3"/><rect x="18" y="54" width="12" height="12" rx="3"/><rect x="36" y="54" width="12" height="12" rx="3"/>
+        <rect x="0" y="72" width="12" height="12" rx="3"/><rect x="18" y="72" width="12" height="12" rx="3"/><rect x="36" y="72" width="12" height="12" rx="3"/>
+        <rect x="0" y="90" width="12" height="12" rx="3"/><rect x="18" y="90" width="12" height="12" rx="3"/><rect x="36" y="90" width="12" height="12" rx="3"/>
+        <rect x="0" y="108" width="12" height="12" rx="3"/><rect x="18" y="108" width="12" height="12" rx="3"/><rect x="36" y="108" width="12" height="12" rx="3"/>
+        <rect x="0" y="126" width="12" height="12" rx="3"/><rect x="18" y="126" width="12" height="12" rx="3"/><rect x="36" y="126" width="12" height="12" rx="3"/>
+        <rect x="0" y="144" width="12" height="12" rx="3"/><rect x="18" y="144" width="12" height="12" rx="3"/><rect x="36" y="144" width="12" height="12" rx="3"/>
+        <rect x="0" y="162" width="12" height="12" rx="3"/><rect x="18" y="162" width="12" height="12" rx="3"/><rect x="36" y="162" width="12" height="12" rx="3"/>
+        <rect x="0" y="180" width="12" height="12" rx="3"/><rect x="18" y="180" width="12" height="12" rx="3"/><rect x="36" y="180" width="12" height="12" rx="3"/>
+        <rect x="0" y="198" width="12" height="12" rx="3"/><rect x="18" y="198" width="12" height="12" rx="3"/><rect x="36" y="198" width="12" height="12" rx="3"/>
+      </g>
+      <g fill="#216E39">
+        <rect x="18" y="0" width="12" height="12" rx="3"/><rect x="36" y="36" width="12" height="12" rx="3"/><rect x="0" y="72" width="12" height="12" rx="3"/><rect x="18" y="126" width="12" height="12" rx="3"/><rect x="36" y="180" width="12" height="12" rx="3"/>
+      </g>
+      <g fill="#3FB950">
+        <rect x="0" y="18" width="12" height="12" rx="3"/><rect x="18" y="54" width="12" height="12" rx="3"/><rect x="36" y="90" width="12" height="12" rx="3"/><rect x="0" y="144" width="12" height="12" rx="3"/><rect x="18" y="198" width="12" height="12" rx="3"/>
+      </g>
+      <path d="M6 6H24V24H42V42H24V60H6V78H24V96H42V114H24V132H6V150H24V168H42V186H24V204H42" fill="none" stroke="#9BE9A8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+        <animate attributeName="stroke-dasharray" values="20 360;130 250;20 360" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-180;-360" dur="5s" repeatCount="indefinite"/>
+      </path>
+      <circle class="pulse" cx="42" cy="204" r="7" fill="#9BE9A8"/>
+    </g>
   </g>
 
   <rect x="44" y="676" width="812" height="44" rx="14" fill="#0D1117" stroke="#30363D"/>

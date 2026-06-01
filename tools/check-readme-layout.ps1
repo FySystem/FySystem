@@ -77,8 +77,11 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch '<rect x="760" y="184" width="96" height="466"') {
         $failures.Add("贡献蛇应位于右侧纵向栏，而不是底部横向模块")
     }
-    if ($dashboard -notmatch 'github-contribution-grid-snake-dark\.svg') {
-        $failures.Add("贡献蛇应引用 output 分支生成的真实贡献蛇图")
+    if ($dashboard -match '<image[^>]+href="https?://') {
+        $failures.Add("dashboard.svg 不应在内部引用远端图片，避免 GitHub README 渲染失败")
+    }
+    if ($dashboard -notmatch 'id="snake-inline"') {
+        $failures.Add("贡献蛇应内联到 dashboard.svg，并标记为 snake-inline")
     }
     if ($dashboard -notmatch '<rect x="44" y="386" width="692" height="264"') {
         $failures.Add("提交轨迹应上移到项目卡片空位并增加高度")
