@@ -24,8 +24,9 @@ foreach ($phrase in $forbiddenPhrases) {
     }
 }
 
-if ($readme -notmatch '\./assets/dashboard\.svg') {
-    $failures.Add("README 应使用整合布局图: ./assets/dashboard.svg")
+$dashboardImagePattern = '\./assets/dashboard\.svg\?v=\d{8,}'
+if ($readme -notmatch $dashboardImagePattern) {
+    $failures.Add("README 应使用带版本参数的整合布局图，避免 GitHub 图片缓存: ./assets/dashboard.svg?v=YYYYMMDD")
 }
 
 $readmeDir = Split-Path -Parent $ReadmePath
@@ -162,7 +163,8 @@ $localReadmeImages = [regex]::Matches($readme, '!\[[^\]]*\]\((\./assets/[^)]+)\)
 
 $allowedLocalImages = @("./assets/dashboard.svg")
 foreach ($image in $localReadmeImages) {
-    if ($allowedLocalImages -notcontains $image) {
+    $normalizedImage = $image -replace '\?.*$', ''
+    if ($allowedLocalImages -notcontains $normalizedImage) {
         $failures.Add("README 中的本地主视觉应收敛到 dashboard.svg，发现: $image")
     }
 }
@@ -179,7 +181,7 @@ $allImageRefs = New-Object System.Collections.Generic.List[string]
 }
 
 $uniqueImageRefs = @($allImageRefs | Where-Object { $_ } | Select-Object -Unique)
-if ($uniqueImageRefs.Count -ne 1 -or $uniqueImageRefs[0] -ne "./assets/dashboard.svg") {
+if ($uniqueImageRefs.Count -ne 1 -or $uniqueImageRefs[0] -notmatch '^\.\/assets\/dashboard\.svg\?v=\d{8,}$') {
     $failures.Add("README 应收敛为单张主视觉图，当前图片引用数: $($uniqueImageRefs.Count)")
 }
 

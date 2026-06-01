@@ -36,7 +36,8 @@ $failures = New-Object System.Collections.Generic.List[string]
 
 foreach ($url in $uniqueUrls) {
     if ($url.StartsWith("./") -or $url.StartsWith("../")) {
-        $localPath = Join-Path $readmeDir $url
+        $localRef = $url -replace '\?.*$', ''
+        $localPath = Join-Path $readmeDir $localRef
         if (-not (Test-Path -LiteralPath $localPath)) {
             $failures.Add("本地图片不存在: $url")
             continue
