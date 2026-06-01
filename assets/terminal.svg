@@ -1,0 +1,80 @@
+<svg width="900" height="280" viewBox="0 0 900 280" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">FySystem</title>
+  <desc id="desc">中文赛博终端风格的 GitHub 主页标题图</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1117"/>
+      <stop offset="0.52" stop-color="#101828"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 54) rotate(37) scale(310 165)">
+      <stop stop-color="#58A6FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#58A6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 74) rotate(142) scale(260 150)">
+      <stop stop-color="#DB61A2" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#DB61A2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <style>
+      .mono { font-family: Consolas, Monaco, 'Courier New', monospace; }
+      .sans { font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; }
+      .line { opacity: 0; animation: show 8s infinite; }
+      .l1 { animation-delay: .4s; }
+      .l2 { animation-delay: 1.5s; }
+      .l3 { animation-delay: 2.6s; }
+      .l4 { animation-delay: 3.7s; }
+      .cursor { animation: blink 1s steps(2, start) infinite; }
+      .scan { animation: scan 4.8s linear infinite; }
+      @keyframes show {
+        0%, 7% { opacity: 0; transform: translateY(6px); }
+        13%, 88% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-4px); }
+      }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes scan {
+        from { transform: translateY(-70px); opacity: .05; }
+        45% { opacity: .22; }
+        to { transform: translateY(300px); opacity: .05; }
+      }
+    </style>
+  </defs>
+
+  <rect width="900" height="280" rx="18" fill="url(#bg)"/>
+  <rect width="900" height="280" rx="18" fill="url(#glowA)"/>
+  <rect width="900" height="280" rx="18" fill="url(#glowB)"/>
+
+  <g opacity="0.42">
+    <path d="M34 54H866" stroke="#30363D"/>
+    <path d="M34 104H866" stroke="#30363D"/>
+    <path d="M34 154H866" stroke="#30363D"/>
+    <path d="M34 204H866" stroke="#30363D"/>
+    <path d="M130 24V256" stroke="#30363D"/>
+    <path d="M318 24V256" stroke="#30363D"/>
+    <path d="M506 24V256" stroke="#30363D"/>
+    <path d="M694 24V256" stroke="#30363D"/>
+  </g>
+
+  <rect class="scan" x="24" y="0" width="852" height="36" fill="#39C5CF" filter="url(#soft)"/>
+
+  <rect x="42" y="38" width="816" height="204" rx="12" fill="#0D1117" fill-opacity="0.82" stroke="#30363D"/>
+  <rect x="42" y="38" width="816" height="34" rx="12" fill="#161B22"/>
+  <circle cx="64" cy="55" r="6" fill="#FF5F56"/>
+  <circle cx="84" cy="55" r="6" fill="#FFBD2E"/>
+  <circle cx="104" cy="55" r="6" fill="#27C93F"/>
+  <text x="450" y="61" fill="#8B949E" text-anchor="middle" class="mono" font-size="13">FySystem.exe</text>
+
+  <text x="72" y="122" fill="#F0F6FC" class="sans" font-size="46" font-weight="700">FySystem</text>
+  <text x="74" y="154" fill="#39C5CF" class="mono" font-size="18">游戏工具 // AI 自动化 // Windows 底层实验</text>
+
+  <g class="mono" font-size="17">
+    <text class="line l1" x="74" y="188" fill="#C9D1D9"><tspan fill="#3FB950">$</tspan> 启动工程工作台</text>
+    <text class="line l2" x="74" y="214" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Oasis 工具链 / 玩法脚本</text>
+    <text class="line l3" x="404" y="188" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> MCP Agent / 自动化流水线</text>
+    <text class="line l4" x="404" y="214" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Windows 底层 / 调试实验</text>
+  </g>
+
+  <rect class="cursor" x="785" y="200" width="10" height="20" fill="#3FB950"/>
+</svg>
