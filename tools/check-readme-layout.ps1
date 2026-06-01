@@ -133,6 +133,22 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch '<rect x="44" y="386" width="692" height="264"') {
         $failures.Add("提交轨迹应上移到项目卡片空位并增加高度")
     }
+    if ($dashboard.Contains("commit signal / activity stream")) {
+        $failures.Add("提交轨迹说明应改成中文，不应继续显示英文 commit signal / activity stream")
+    }
+    foreach ($chartLabel in @("X轴（横轴）：最近提交顺序", "Y轴（纵轴）：提交活跃强度", "越高越活跃", "较早", "最新")) {
+        if (-not $dashboard.Contains($chartLabel)) {
+            $failures.Add("提交轨迹应明确中文坐标含义，缺少: $chartLabel")
+        }
+    }
+    if ($dashboard -match '<rect class="cursor" x="452" y="310"') {
+        $failures.Add("workspace.boot 光标不应固定在第三行位置，应跟随当前显示文字行")
+    }
+    foreach ($cursorClass in @("cursor-l1", "cursor-l2", "cursor-l3")) {
+        if (-not $dashboard.Contains($cursorClass)) {
+            $failures.Add("workspace.boot 光标应按行同步显示，缺少: $cursorClass")
+        }
+    }
     $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
     if ($trackMatch.Success) {
         $pointNumbers = [regex]::Matches($trackMatch.Groups[1].Value, '-?\d+(?:\.\d+)?') |

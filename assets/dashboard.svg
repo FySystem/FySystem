@@ -93,7 +93,15 @@
     <text class="line l2" x="72" y="292" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> 游戏工具 / 游戏外挂</text>
     <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Windows 驱动开发 / 自动化流水线</text>
   </g>
-  <rect class="cursor" x="452" y="310" width="10" height="20" fill="#3FB950"/>
+  <g class="line l1">
+    <rect class="cursor cursor-l1" x="232" y="242" width="10" height="20" fill="#3FB950"/>
+  </g>
+  <g class="line l2">
+    <rect class="cursor cursor-l2" x="322" y="276" width="10" height="20" fill="#3FB950"/>
+  </g>
+  <g class="line l3">
+    <rect class="cursor cursor-l3" x="452" y="310" width="10" height="20" fill="#3FB950"/>
+  </g>
 
   <rect x="562" y="184" width="174" height="172" rx="16" class="panel"/>
   <text x="586" y="226" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">运行状态</text>
@@ -106,7 +114,22 @@
 
   <rect x="44" y="386" width="692" height="264" rx="16" class="panel"/>
   <text x="72" y="430" class="sans" font-size="24" font-weight="700" fill="#F8FAFC">提交轨迹</text>
-  <text x="72" y="460" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
+  <text x="72" y="460" class="mono" font-size="14" fill="#8B949E">X轴（横轴）：最近提交顺序  /  Y轴（纵轴）：提交活跃强度（越高越活跃）</text>
+  <g class="mono" font-size="12" fill="#8B949E">
+    <text x="96" y="492">高</text>
+    <text x="96" y="606">低</text>
+    <text x="82" y="632">较早</text>
+    <text x="650" y="632">最新</text>
+  </g>
+  <g opacity=".42">
+    <path d="M118 488V610H698" stroke="#30363D" stroke-width="2" stroke-linecap="round"/>
+    <path d="M112 494L118 486L124 494" stroke="#8B949E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M690 604L700 610L690 616" stroke="#8B949E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M118 488H698" stroke="#30363D" stroke-dasharray="5 10"/>
+    <path d="M118 528H698" stroke="#30363D" stroke-dasharray="5 10"/>
+    <path d="M118 568H698" stroke="#30363D" stroke-dasharray="5 10"/>
+    <path d="M118 608H698" stroke="#30363D" stroke-dasharray="5 10"/>
+  </g>
   <polyline points="78,606 132,572 186,584 240,514 294,546 348,492 402,562 456,526 510,588 564,476 618,536 688,502" fill="none" stroke="#39C5CF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#58A6FF">
     <circle cx="132" cy="572" r="5"/>
