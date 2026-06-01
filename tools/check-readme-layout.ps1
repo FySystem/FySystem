@@ -136,7 +136,12 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard.Contains("commit signal / activity stream")) {
         $failures.Add("提交轨迹说明应改成中文，不应继续显示英文 commit signal / activity stream")
     }
-    foreach ($chartLabel in @("X轴（横轴）：最近提交顺序", "Y轴（纵轴）：提交活跃强度", "越高越活跃", "较早", "最新")) {
+    foreach ($verboseLabel in @("X轴（横轴）", "Y轴（纵轴）", "最近提交顺序", "提交活跃强度", "越高越活跃")) {
+        if ($dashboard.Contains($verboseLabel)) {
+            $failures.Add("提交轨迹坐标说明应保持简短，不应继续显示: $verboseLabel")
+        }
+    }
+    foreach ($chartLabel in @("X：时间", "Y：活跃度", "较早", "最新")) {
         if (-not $dashboard.Contains($chartLabel)) {
             $failures.Add("提交轨迹应明确中文坐标含义，缺少: $chartLabel")
         }
