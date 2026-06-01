@@ -42,6 +42,12 @@ foreach ($url in $uniqueUrls) {
             continue
         }
         Write-Host "OK local $url"
+        if ([System.IO.Path]::GetExtension($localPath) -eq ".svg") {
+            $svg = Get-Content -Raw -LiteralPath $localPath
+            [regex]::Matches($svg, '<image[^>]+(?:href|xlink:href)="([^"]+)"') | ForEach-Object {
+                $urls.Add($_.Groups[1].Value)
+            }
+        }
         continue
     }
 
@@ -57,6 +63,32 @@ foreach ($url in $uniqueUrls) {
             continue
         }
         Write-Host "OK remote $url -> $contentType"
+    }
+    catch {
+        $failures.Add("请求失败: $url -> $($_.Exception.Message)")
+    }
+}
+
+$nestedUrls = $urls | Where-Object { $_ } | Select-Object -Unique
+foreach ($url in $nestedUrls) {
+    if ($uniqueUrls -contains $url) {
+        continue
+    }
+    if ($url.StartsWith("./") -or $url.StartsWith("../")) {
+        continue
+    }
+    try {
+        $response = Invoke-WebRequest -Uri $url -UseBasicParsing -Headers @{ "User-Agent" = "FySystem-README-check" } -TimeoutSec 25
+        $contentType = [string]$response.Headers["Content-Type"]
+        if ($response.StatusCode -lt 200 -or $response.StatusCode -ge 300) {
+            $failures.Add("HTTP $($response.StatusCode): $url")
+            continue
+        }
+        if ($contentType -notmatch '^image/') {
+            $failures.Add("不是图片响应: $url -> $contentType")
+            continue
+        }
+        Write-Host "OK nested $url -> $contentType"
     }
     catch {
         $failures.Add("请求失败: $url -> $($_.Exception.Message)")

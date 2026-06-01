@@ -38,7 +38,7 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch "贡献蛇") {
         $failures.Add("dashboard.svg 应保留贡献蛇模块")
     }
-    foreach ($forbidden in @("oasis-skill-plus", "oasis-origins-mcp", "Oasis 玩法能力扩展", "Windows 底层实验")) {
+    foreach ($forbidden in @("oasis-skill-plus", "oasis-origins-mcp", "Oasis 玩法能力扩展", "Windows 底层实验", "Game Tooling", "Driver Lab")) {
         if ($dashboard.Contains($forbidden)) {
             $failures.Add("dashboard.svg 不应显示过时或具体项目文案: $forbidden")
         }
@@ -77,13 +77,19 @@ if (Test-Path -LiteralPath $dashboardPath) {
     if ($dashboard -notmatch '<rect x="760" y="184" width="96" height="466"') {
         $failures.Add("贡献蛇应位于右侧纵向栏，而不是底部横向模块")
     }
+    if ($dashboard -notmatch 'github-contribution-grid-snake-dark\.svg') {
+        $failures.Add("贡献蛇应引用 output 分支生成的真实贡献蛇图")
+    }
+    if ($dashboard -notmatch '<rect x="44" y="386" width="692" height="264"') {
+        $failures.Add("提交轨迹应上移到项目卡片空位并增加高度")
+    }
     $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
     if ($trackMatch.Success) {
         $pointNumbers = [regex]::Matches($trackMatch.Groups[1].Value, '-?\d+(?:\.\d+)?') |
             ForEach-Object { [double]$_.Value }
         for ($i = 1; $i -lt $pointNumbers.Count; $i += 2) {
-            if ($pointNumbers[$i] -lt 590) {
-                $failures.Add("提交轨迹折线进入标题区域，y=$($pointNumbers[$i])；折线 y 坐标应 >= 590")
+            if ($pointNumbers[$i] -lt 470) {
+                $failures.Add("提交轨迹折线进入标题区域，y=$($pointNumbers[$i])；折线 y 坐标应 >= 470")
                 break
             }
         }

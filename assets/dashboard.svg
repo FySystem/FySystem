@@ -104,50 +104,22 @@
   <rect x="586" y="328" width="124" height="14" rx="7" fill="#21262D"/>
   <rect class="bar-b" x="586" y="328" width="124" height="14" rx="7" fill="#58A6FF"/>
 
-  <rect x="44" y="386" width="328" height="92" rx="16" class="panel"/>
-  <circle class="pulse" cx="76" cy="422" r="8" fill="#39C5CF"/>
-  <text x="96" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">Game Tooling</text>
-  <text x="76" y="458" class="sans" font-size="15" fill="#C9D1D9">玩法脚本 / 编辑器工具 / 游戏外挂</text>
-
-  <rect x="398" y="386" width="338" height="92" rx="16" class="panel"/>
-  <circle class="pulse delay" cx="430" cy="422" r="8" fill="#58A6FF"/>
-  <text x="450" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">Driver Lab</text>
-  <text x="430" y="458" class="sans" font-size="15" fill="#C9D1D9">Windows 驱动开发 / 底层调试</text>
-
-  <rect x="44" y="508" width="692" height="142" rx="16" class="panel"/>
-  <text x="72" y="548" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">提交轨迹</text>
-  <text x="72" y="576" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
-  <polyline points="76,630 132,618 188,626 244,602 300,614 356,594 412,616 468,600 524,624 580,596 688,612" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="44" y="386" width="692" height="264" rx="16" class="panel"/>
+  <text x="72" y="430" class="sans" font-size="24" font-weight="700" fill="#F8FAFC">提交轨迹</text>
+  <text x="72" y="460" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
+  <polyline points="78,606 132,572 186,584 240,514 294,546 348,492 402,562 456,526 510,588 564,476 618,536 688,502" fill="none" stroke="#39C5CF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <g fill="#58A6FF">
-    <circle cx="132" cy="618" r="4"/>
-    <circle cx="244" cy="602" r="4"/>
-    <circle cx="356" cy="594" r="4"/>
-    <circle cx="580" cy="596" r="4"/>
+    <circle cx="132" cy="572" r="5"/>
+    <circle cx="240" cy="514" r="5"/>
+    <circle cx="348" cy="492" r="5"/>
+    <circle cx="564" cy="476" r="5"/>
   </g>
 
   <rect x="760" y="184" width="96" height="466" rx="16" class="panel"/>
   <text x="808" y="226" text-anchor="middle" class="sans" font-size="21" font-weight="700" fill="#F8FAFC">贡献蛇</text>
   <text x="808" y="252" text-anchor="middle" class="mono" font-size="12" fill="#8B949E">snake run</text>
   <g id="snake-vertical" transform="translate(786 276)">
-    <g fill="#21262D" stroke="#30363D" stroke-width="1">
-      <rect x="0" y="0" width="12" height="12" rx="3"/><rect x="18" y="0" width="12" height="12" rx="3"/><rect x="36" y="0" width="12" height="12" rx="3"/>
-      <rect x="0" y="18" width="12" height="12" rx="3"/><rect x="18" y="18" width="12" height="12" rx="3"/><rect x="36" y="18" width="12" height="12" rx="3"/>
-      <rect x="0" y="36" width="12" height="12" rx="3"/><rect x="18" y="36" width="12" height="12" rx="3"/><rect x="36" y="36" width="12" height="12" rx="3"/>
-      <rect x="0" y="54" width="12" height="12" rx="3"/><rect x="18" y="54" width="12" height="12" rx="3"/><rect x="36" y="54" width="12" height="12" rx="3"/>
-      <rect x="0" y="72" width="12" height="12" rx="3"/><rect x="18" y="72" width="12" height="12" rx="3"/><rect x="36" y="72" width="12" height="12" rx="3"/>
-      <rect x="0" y="90" width="12" height="12" rx="3"/><rect x="18" y="90" width="12" height="12" rx="3"/><rect x="36" y="90" width="12" height="12" rx="3"/>
-      <rect x="0" y="108" width="12" height="12" rx="3"/><rect x="18" y="108" width="12" height="12" rx="3"/><rect x="36" y="108" width="12" height="12" rx="3"/>
-      <rect x="0" y="126" width="12" height="12" rx="3"/><rect x="18" y="126" width="12" height="12" rx="3"/><rect x="36" y="126" width="12" height="12" rx="3"/>
-      <rect x="0" y="144" width="12" height="12" rx="3"/><rect x="18" y="144" width="12" height="12" rx="3"/><rect x="36" y="144" width="12" height="12" rx="3"/>
-      <rect x="0" y="162" width="12" height="12" rx="3"/><rect x="18" y="162" width="12" height="12" rx="3"/><rect x="36" y="162" width="12" height="12" rx="3"/>
-      <rect x="0" y="180" width="12" height="12" rx="3"/><rect x="18" y="180" width="12" height="12" rx="3"/><rect x="36" y="180" width="12" height="12" rx="3"/>
-      <rect x="0" y="198" width="12" height="12" rx="3"/><rect x="18" y="198" width="12" height="12" rx="3"/><rect x="36" y="198" width="12" height="12" rx="3"/>
-    </g>
-    <path d="M6 6H24V24H42V42H24V60H6V78H24V96H42V114H24V132H6V150H24V168H42V186H24V204H42" fill="none" stroke="#3FB950" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
-      <animate attributeName="stroke-dasharray" values="20 360;130 250;20 360" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-dashoffset" values="0;-180;-360" dur="5s" repeatCount="indefinite"/>
-    </path>
-    <circle class="pulse" cx="42" cy="204" r="7" fill="#9BE9A8"/>
+    <image href="https://raw.githubusercontent.com/FySystem/FySystem/output/github-contribution-grid-snake-dark.svg" x="-184" y="-16" width="430" height="94" transform="rotate(90 31 31)" preserveAspectRatio="xMidYMid meet"/>
   </g>
 
   <rect x="44" y="676" width="812" height="44" rx="14" fill="#0D1117" stroke="#30363D"/>
