@@ -1,8 +1,8 @@
-<svg width="900" height="520" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="900" height="760" viewBox="0 0 900 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">FySystem Dashboard</title>
   <desc id="desc">中文赛博仪表盘风格的 GitHub 主页主视觉</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="520" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="760" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0B1020"/>
       <stop offset="0.56" stop-color="#0D1117"/>
       <stop offset="1" stop-color="#111827"/>
@@ -57,9 +57,9 @@
     </style>
   </defs>
 
-  <rect width="900" height="520" rx="24" fill="url(#bg)"/>
-  <rect width="900" height="520" rx="24" fill="url(#glowCyan)"/>
-  <rect width="900" height="520" rx="24" fill="url(#glowPink)"/>
+  <rect width="900" height="760" rx="24" fill="url(#bg)"/>
+  <rect width="900" height="760" rx="24" fill="url(#glowCyan)"/>
+  <rect width="900" height="760" rx="24" fill="url(#glowPink)"/>
 
   <g opacity=".26">
     <path d="M36 86H864" stroke="#30363D"/>
@@ -67,11 +67,14 @@
     <path d="M36 246H864" stroke="#30363D"/>
     <path d="M36 326H864" stroke="#30363D"/>
     <path d="M36 406H864" stroke="#30363D"/>
-    <path d="M152 36V484" stroke="#30363D"/>
-    <path d="M300 36V484" stroke="#30363D"/>
-    <path d="M448 36V484" stroke="#30363D"/>
-    <path d="M596 36V484" stroke="#30363D"/>
-    <path d="M744 36V484" stroke="#30363D"/>
+    <path d="M36 486H864" stroke="#30363D"/>
+    <path d="M36 566H864" stroke="#30363D"/>
+    <path d="M36 646H864" stroke="#30363D"/>
+    <path d="M152 36V724" stroke="#30363D"/>
+    <path d="M300 36V724" stroke="#30363D"/>
+    <path d="M448 36V724" stroke="#30363D"/>
+    <path d="M596 36V724" stroke="#30363D"/>
+    <path d="M744 36V724" stroke="#30363D"/>
   </g>
 
   <rect class="scan" x="36" y="0" width="828" height="38" fill="#39C5CF" filter="url(#blur)"/>
@@ -113,5 +116,26 @@
   <text x="518" y="429" class="mono" font-size="20" font-weight="700" fill="#F8FAFC">oasis-origins-mcp</text>
   <text x="498" y="458" class="sans" font-size="15" fill="#C9D1D9">MCP Agent / 自动化流水线</text>
 
-  <rect x="36" y="502" width="828" height="2" rx="1" fill="url(#lineGlow)"/>
+  <rect x="44" y="508" width="812" height="142" rx="16" class="panel"/>
+  <text x="72" y="548" class="sans" font-size="22" font-weight="700" fill="#F8FAFC">提交轨迹</text>
+  <text x="72" y="576" class="mono" font-size="14" fill="#8B949E">commit signal / activity stream</text>
+  <polyline points="76,618 126,594 176,608 226,566 276,586 326,538 376,574 426,550 476,586 526,530 576,558 626,520 676,548 726,506 818,526" fill="none" stroke="#39C5CF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#58A6FF">
+    <circle cx="126" cy="594" r="4"/>
+    <circle cx="226" cy="566" r="4"/>
+    <circle cx="326" cy="538" r="4"/>
+    <circle cx="526" cy="530" r="4"/>
+    <circle cx="726" cy="506" r="4"/>
+  </g>
+
+  <rect x="44" y="676" width="812" height="44" rx="14" fill="#0D1117" stroke="#30363D"/>
+  <text x="72" y="704" class="mono" font-size="15" fill="#C9D1D9">Lua</text>
+  <text x="170" y="704" class="mono" font-size="15" fill="#C9D1D9">JavaScript</text>
+  <text x="328" y="704" class="mono" font-size="15" fill="#C9D1D9">Go</text>
+  <text x="414" y="704" class="mono" font-size="15" fill="#C9D1D9">C++</text>
+  <text x="518" y="704" class="mono" font-size="15" fill="#C9D1D9">Unreal / UGC</text>
+  <text x="692" y="704" class="mono" font-size="15" fill="#C9D1D9">MCP</text>
+  <circle class="pulse" cx="816" cy="698" r="6" fill="#3FB950"/>
+
+  <rect x="36" y="742" width="828" height="2" rx="1" fill="url(#lineGlow)"/>
 </svg>

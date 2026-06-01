@@ -47,6 +47,22 @@ foreach ($image in $localReadmeImages) {
     }
 }
 
+$allImageRefs = New-Object System.Collections.Generic.List[string]
+[regex]::Matches($readme, '<img[^>]+src="([^"]+)"') | ForEach-Object {
+    $allImageRefs.Add($_.Groups[1].Value)
+}
+[regex]::Matches($readme, '<source[^>]+srcset="([^"]+)"') | ForEach-Object {
+    $allImageRefs.Add($_.Groups[1].Value)
+}
+[regex]::Matches($readme, '!\[[^\]]*\]\(([^)]+)\)') | ForEach-Object {
+    $allImageRefs.Add($_.Groups[1].Value)
+}
+
+$uniqueImageRefs = @($allImageRefs | Where-Object { $_ } | Select-Object -Unique)
+if ($uniqueImageRefs.Count -ne 1 -or $uniqueImageRefs[0] -ne "./assets/dashboard.svg") {
+    $failures.Add("README 应收敛为单张主视觉图，当前图片引用数: $($uniqueImageRefs.Count)")
+}
+
 if ($failures.Count -gt 0) {
     Write-Host "README 布局检查失败:"
     $failures | ForEach-Object { Write-Host " - $_" }
