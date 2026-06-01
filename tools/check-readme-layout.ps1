@@ -141,26 +141,20 @@ if (Test-Path -LiteralPath $dashboardPath) {
             $failures.Add("提交轨迹应明确中文坐标含义，缺少: $chartLabel")
         }
     }
-    if ($dashboard -match '<rect class="cursor" x="452" y="310"') {
-        $failures.Add("workspace.boot 光标不应固定在第三行位置，应跟随当前显示文字行")
+    $cursorClassMatches = [regex]::Matches($dashboard, 'class="[^"]*\bcursor\b[^"]*"')
+    if ($cursorClassMatches.Count -ne 1) {
+        $failures.Add("workspace.boot 应只显示一个光标，当前找到 $($cursorClassMatches.Count) 个 cursor 标记")
     }
-    $cursorBounds = @{
-        "cursor-l1" = @{ MinX = 220.0; MaxX = 260.0; Y = 242.0 }
-        "cursor-l2" = @{ MinX = 310.0; MaxX = 350.0; Y = 276.0 }
-        "cursor-l3" = @{ MinX = 440.0; MaxX = 480.0; Y = 310.0 }
+    foreach ($oldCursorClass in @("cursor-l1", "cursor-l2", "cursor-l3")) {
+        if ($dashboard.Contains($oldCursorClass)) {
+            $failures.Add("workspace.boot 不应使用多光标分行方案，发现: $oldCursorClass")
+        }
     }
-    foreach ($cursorClass in $cursorBounds.Keys) {
-        $cursorMatch = [regex]::Match($dashboard, '<rect class="[^"]*\b' + [regex]::Escape($cursorClass) + '\b[^"]*" x="(?<x>\d+(?:\.\d+)?)" y="(?<y>\d+(?:\.\d+)?)"')
-        if (-not $cursorMatch.Success) {
-            $failures.Add("workspace.boot 光标应按行同步显示，缺少: $cursorClass")
-            continue
-        }
-        $cursorX = [double]$cursorMatch.Groups["x"].Value
-        $cursorY = [double]$cursorMatch.Groups["y"].Value
-        $expected = $cursorBounds[$cursorClass]
-        if ($cursorX -lt $expected.MinX -or $cursorX -gt $expected.MaxX -or [math]::Abs($cursorY - $expected.Y) -gt 1) {
-            $failures.Add("$cursorClass 位置偏离文字尾部: x=$cursorX, y=$cursorY")
-        }
+    if ($dashboard -match '<rect[^>]+class="[^"]*\bcursor\b') {
+        $failures.Add("workspace.boot 光标不应使用手写 x/y 矩形定位，应内联在文字后面")
+    }
+    if ($dashboard -notmatch '<text class="line l3"[^>]*>[\s\S]*自动化流水线<tspan class="cursor"[^>]*>') {
+        $failures.Add("workspace.boot 光标应作为第三行文字末尾的内联 tspan，避免手算坐标偏移")
     }
     $trackMatch = [regex]::Match($dashboard, '<text[^>]*>提交轨迹</text>[\s\S]*?<polyline points="([^"]+)"')
     if ($trackMatch.Success) {

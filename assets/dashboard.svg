@@ -91,16 +91,7 @@
   <g class="mono" font-size="17">
     <text class="line l1" x="72" y="258" fill="#C9D1D9"><tspan fill="#3FB950">$</tspan> 启动工程工作台</text>
     <text class="line l2" x="72" y="292" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> 游戏工具 / 游戏外挂</text>
-    <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Windows 驱动开发 / 自动化流水线</text>
-  </g>
-  <g class="line l1">
-    <rect class="cursor cursor-l1" x="232" y="242" width="10" height="20" fill="#3FB950"/>
-  </g>
-  <g class="line l2">
-    <rect class="cursor cursor-l2" x="322" y="276" width="10" height="20" fill="#3FB950"/>
-  </g>
-  <g class="line l3">
-    <rect class="cursor cursor-l3" x="452" y="310" width="10" height="20" fill="#3FB950"/>
+    <text class="line l3" x="72" y="326" fill="#C9D1D9"><tspan fill="#39C5CF">[完成]</tspan> Windows 驱动开发 / 自动化流水线<tspan class="cursor" fill="#3FB950">█</tspan></text>
   </g>
 
   <rect x="562" y="184" width="174" height="172" rx="16" class="panel"/>
