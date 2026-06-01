@@ -14,18 +14,12 @@
 <br />
 <br />
 
-<a href="https://github.com/FySystem/oasis-skill-plus">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=FySystem&repo=oasis-skill-plus&theme=tokyonight&hide_border=true" alt="oasis-skill-plus" />
-</a>
-<a href="https://github.com/FySystem/oasis-origins-mcp">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=FySystem&repo=oasis-origins-mcp&theme=tokyonight&hide_border=true" alt="oasis-origins-mcp" />
-</a>
+![项目面板](./assets/projects.svg)
 
 <br />
 <br />
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=FySystem&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&rank_icon=github" alt="GitHub Stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=FySystem&count_private=true&theme=tokyonight&layout=compact&langs_count=8&hide_border=true" alt="Top Languages" />
+![状态面板](./assets/status.svg)
 
 <br />
 <br />

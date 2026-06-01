@@ -1,0 +1,36 @@
+<svg width="900" height="210" viewBox="0 0 900 210" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">状态面板</title>
+  <desc id="desc">FySystem 的技术方向状态面板</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .sans { font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; }
+      .mono { font-family: Consolas, Monaco, 'Courier New', monospace; }
+      .bar-a { animation: loadA 3.2s ease-in-out infinite; transform-origin: 96px 0; }
+      .bar-b { animation: loadB 3.2s ease-in-out infinite; transform-origin: 96px 0; }
+      .bar-c { animation: loadC 3.2s ease-in-out infinite; transform-origin: 96px 0; }
+      @keyframes loadA { 0%, 100% { transform: scaleX(.58); } 50% { transform: scaleX(.92); } }
+      @keyframes loadB { 0%, 100% { transform: scaleX(.72); } 50% { transform: scaleX(.45); } }
+      @keyframes loadC { 0%, 100% { transform: scaleX(.40); } 50% { transform: scaleX(.76); } }
+    </style>
+  </defs>
+
+  <rect width="900" height="210" rx="18" fill="url(#bg)" stroke="#30363D"/>
+  <text x="34" y="45" class="sans" font-size="24" font-weight="700" fill="#F0F6FC">运行状态</text>
+  <text x="34" y="73" class="mono" font-size="15" fill="#8B949E">用本地 SVG 表达方向，避免外部统计卡片加载失败</text>
+
+  <text x="70" y="112" class="mono" font-size="16" fill="#C9D1D9">游戏工具链</text>
+  <rect x="210" y="98" width="610" height="20" rx="10" fill="#21262D"/>
+  <rect class="bar-a" x="210" y="98" width="610" height="20" rx="10" fill="#39C5CF"/>
+
+  <text x="70" y="148" class="mono" font-size="16" fill="#C9D1D9">AI 自动化</text>
+  <rect x="210" y="134" width="610" height="20" rx="10" fill="#21262D"/>
+  <rect class="bar-b" x="210" y="134" width="610" height="20" rx="10" fill="#58A6FF"/>
+
+  <text x="70" y="184" class="mono" font-size="16" fill="#C9D1D9">Windows 底层</text>
+  <rect x="210" y="170" width="610" height="20" rx="10" fill="#21262D"/>
+  <rect class="bar-c" x="210" y="170" width="610" height="20" rx="10" fill="#DB61A2"/>
+</svg>
